@@ -1,0 +1,16 @@
+{
+  "name": "volumes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build --tag=incrementor .",
+    "docker:volume": "docker run --env DATA_PATH=/data/num.txt --mount type=volume,src=incrementor-data,target=/data incrementor",
+    "docker:volumeclean": "docker volume rm incrementor-data",
+    "docker:volumeswipe": "docker volume prune"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
